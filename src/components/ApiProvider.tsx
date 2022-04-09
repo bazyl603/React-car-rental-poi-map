@@ -1,27 +1,31 @@
-import React, { createContext, ReactNode, useContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import axios from 'axios';
+
+import { dataElement } from './types';
 
 interface ApiContextType {
-  //api to type ApiContext
+  data: dataElement[] | null,
+  error: any
 }
 
 const ApiContext = createContext<any>(
   {
-    get: () => {}
-  } as any
+    data: null,
+    error: {}
+  } as ApiContextType
 );
 
 const CORSREQUEST = 'https://cors-anywhere.herokuapp.com/';
 
 function ApiProvider({ children }: { children: ReactNode }): JSX.Element{
-  const [data, setData] = useState<any | null>();
+  const [data, setData] = useState<dataElement[] | null >();
   const [error, setError] = useState<any>();
 
   const get = async () => {
     try {
-      let response = await fetch(CORSREQUEST + 'https://android.jrotor.com/api/map?objectType=VEHICLE');
-      response = await response.json();
+      let response = await axios.get(CORSREQUEST + 'https://android.jrotor.com/api/map?objectType=VEHICLE');
       if(response) {
-        setData(response);
+        setData(response.data.objects);
       }
     }catch(err) {
       setError(err);
@@ -36,17 +40,8 @@ function ApiProvider({ children }: { children: ReactNode }): JSX.Element{
     }
   }, []);
 
-  console.log(data);
-  const memoValue = useMemo(
-    () => ({
-      data,
-      error
-    }),
-    [data, error]
-  );
-
   return (
-    <ApiContext.Provider value={memoValue}>
+    <ApiContext.Provider value={{data, error}}>
       {children}
     </ApiContext.Provider>
   );

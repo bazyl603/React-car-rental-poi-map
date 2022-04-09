@@ -14,7 +14,8 @@ function App() {
 
   return (
     <div className='App'>
-      {data ? <Map /> : <p>loading...</p> }
+      {error ? <p>something went wrong</p> :
+      data ? <Map data={data} center={{lat: data[0].location.latitude, lon: data[0].location.longitude}}/> : <p>loading...</p> }
     </div>
   );
 }
