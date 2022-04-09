@@ -1,4 +1,5 @@
 import React from 'react';
+import BatteryBar from './BatteryBar';
 import BtnCustom from './BtnCustom';
 import { CONTENER, FLEX, IMG, TEXT, VRAPER } from './styled/popUpContent';
 import { dataElement } from './types';
@@ -23,6 +24,7 @@ function PopUpContent(props: Props): JSX.Element{
         
         <VRAPER>
           <TEXT>{data.rangeKm} km</TEXT>
+          <BatteryBar levelPct={data.batteryLevelPct}/>
           <TEXT>{data.batteryLevelPct} %</TEXT>
         </VRAPER>
       </FLEX>
