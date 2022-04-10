@@ -35,11 +35,13 @@ function ApiProvider({ children }: { children: ReactNode }): JSX.Element{
   useEffect(() => {
     let mounted = false;
     if(!mounted) {
-      get();
+      get();      
+    }
+    return () => {
       mounted = true;
     }
   }, []);
-
+  console.log(data);
   return (
     <ApiContext.Provider value={{data, error}}>
       {children}

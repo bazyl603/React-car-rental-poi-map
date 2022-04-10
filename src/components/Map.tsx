@@ -15,9 +15,10 @@ interface Props {
 function Map(props: Props): JSX.Element{
 
   const { data, center } = props;
-  console.log(data);
+  //console.log(data);// TODO delete
 
   return (
+    <>
     <MapContainer center={[center.lat, center.lon]} zoom={15} maxZoom={18} scrollWheelZoom={true}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -26,14 +27,15 @@ function Map(props: Props): JSX.Element{
 
       <MarkerClusterGroup showCoverageOnHover={false}>
         {data.map((el: dataElement) => (
-        <Marker position={[el.location.latitude, el.location.longitude]} icon={el.status === "AVAILABLE" ? greenIcon : blueIcon} key={el.id}> 
+          <Marker position={[el.location.latitude, el.location.longitude]} icon={el.status === "AVAILABLE" ? greenIcon : blueIcon} key={el.id}> 
             <Popup>
-              <PopUpContent data={el} />
+              <PopUpContent data={el}  />
             </Popup>
           </Marker>))
         }
       </MarkerClusterGroup>
     </MapContainer>
+    </>
   );
 }
 

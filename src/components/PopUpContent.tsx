@@ -28,8 +28,18 @@ function PopUpContent(props: Props): JSX.Element{
           <TEXT>{data.batteryLevelPct} %</TEXT>
         </VRAPER>
       </FLEX>
+      <FLEX>
+        <VRAPER>
+          <TEXT>{data.type}</TEXT>
+          <TEXT>reservation: {data.reservation ? data.reservationEnd : "--"}</TEXT>
+        </VRAPER>
+        
+        <VRAPER>
+          <TEXT>{data.name}</TEXT>
+        </VRAPER>
+      </FLEX>
       
-    <BtnCustom>more</BtnCustom>
+    <BtnCustom onClick={() => alert('rental function')} position={{left: 25, top: 85}} height={30}>Rent</BtnCustom>
     </CONTENER>
   );
 }

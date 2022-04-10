@@ -10,12 +10,13 @@ margin: auto;
 
 export const VRAPER = styled.div`
 width: 120px;
-height: 120px;
+height:100px;
 text-align: center;
 `
 export const IMG = styled.img`
-height: 40%;
+height: 50%;
 margin: 0;
+margin-bottom: 8px;
 padding: 0;
 `
 
