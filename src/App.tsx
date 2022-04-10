@@ -31,7 +31,7 @@ function App() {
   const batterykHandler = () => {
     setBateryLevel(!batteryLevel);
   }
-  console.log("filterdada : " + filterData)
+  
   return (
     <div className='App'>
       {error ? <p>something went wrong</p> :

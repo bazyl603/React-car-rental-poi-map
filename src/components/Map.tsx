@@ -15,7 +15,6 @@ interface Props {
 function Map(props: Props): JSX.Element{
 
   const { data, center } = props;
-  //console.log(data);// TODO delete
 
   return (
     <>

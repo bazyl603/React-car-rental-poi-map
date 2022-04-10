@@ -41,7 +41,7 @@ function ApiProvider({ children }: { children: ReactNode }): JSX.Element{
       mounted = true;
     }
   }, []);
-  console.log(data);
+  
   return (
     <ApiContext.Provider value={{data, error}}>
       {children}
