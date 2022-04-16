@@ -2,6 +2,7 @@ import React, { createContext, ReactNode, useContext, useEffect, useState } from
 import axios from 'axios';
 
 import { dataElement } from './types';
+import { json } from './example';
 
 interface ApiContextType {
   data: dataElement[] | null,
@@ -23,9 +24,11 @@ function ApiProvider({ children }: { children: ReactNode }): JSX.Element{
 
   const get = async () => {
     try {
-      let response = await axios.get('../example.json');
+      //let response = await axios.get(CORSREQUEST);
+      let response = json
       if(response) {
-        setData(response.data.objects);
+        //setData(response.data.objects);
+        setData(response.objects);
       }
     }catch(err) {
       setError(err);
