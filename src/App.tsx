@@ -50,6 +50,7 @@ function App() {
             </>
           </Modal>
           <BtnCustom onClick={handleOpen} position={{left: 50, top: 90}} height={40}>Filter</BtnCustom>
+          {/* set center data position on user location */}
           <Map data={filterData} center={{lat: 51.77687, lon: 19.45468}}/>
         </>
       ) : <p>loading...</p> }      

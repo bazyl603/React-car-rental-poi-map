@@ -26,7 +26,7 @@ function Map(props: Props): JSX.Element{
 
       <MarkerClusterGroup showCoverageOnHover={false}>
         {data.map((el: dataElement) => (
-          <Marker position={[el.location.latitude, el.location.longitude]} icon={el.status === "AVAILABLE" ? greenIcon : blueIcon} key={el.id}> 
+          <Marker position={[el.location.latitude, el.location.longitude]} icon={el.status === "AVAILABLE" ? greenIcon : blueIcon} key={el.id + Math.random()}> 
             <Popup>
               <PopUpContent data={el}  />
             </Popup>
