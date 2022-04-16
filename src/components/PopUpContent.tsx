@@ -12,7 +12,8 @@ function PopUpContent(props: Props): JSX.Element{
 
   const { data } = props;
 
-  const image = `https://android.jrotor.com/api/attachments/${data.picture.name}`;
+  //const image = `https://android.jrotor.com/api/attachments/${data.picture.name}`;
+  const image = `./img/${data.picture.name}.jpg`
 
   return (
     <CONTENER>

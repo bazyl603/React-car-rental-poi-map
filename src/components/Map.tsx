@@ -18,7 +18,7 @@ function Map(props: Props): JSX.Element{
 
   return (
     <>
-    <MapContainer center={[center.lat, center.lon]} zoom={15} maxZoom={18} scrollWheelZoom={true}>
+    <MapContainer center={[center.lat, center.lon]} zoom={13} maxZoom={18} scrollWheelZoom={true}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
