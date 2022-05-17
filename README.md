@@ -1,6 +1,6 @@
 # React web app with openstreetmap that displays POIs for electric cars for hire.
 
-### Technologies:
+### ToDo:
 * fix filter
 
 ## Technologies:
