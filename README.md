@@ -1,5 +1,8 @@
 # React web app with openstreetmap that displays POIs for electric cars for hire.
 
+### Technologies:
+* fix filter
+
 ## Technologies:
 The project was created with:
 * Typescript
