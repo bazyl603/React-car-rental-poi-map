@@ -16,7 +16,7 @@ const ApiContext = createContext<any>(
   } as ApiContextType
 );
 
-//const CORSREQUEST = 'https://cors-anywhere.herokuapp.com/https://android.jrotor.com/api/map?objectType=VEHICLE';
+//const CORSREQUEST = 'https://cors-anywhere.herokuapp.com';
 
 function ApiProvider({ children }: { children: ReactNode }): JSX.Element{
   const [data, setData] = useState<dataElement[] | null >();
